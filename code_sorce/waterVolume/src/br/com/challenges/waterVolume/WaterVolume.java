@@ -20,15 +20,15 @@ public class WaterVolume {
         List<Integer> listDistance = new ArrayList<>();
 
         //move the array2d from left to right
-        for (int linha = 0; linha < array2D.length; linha++) {
-            for (int coluna = 0; coluna < array2D.length; coluna++) {
+        for (int row = 0; row < array2D.length; row++) {
+            for (int column = 0; column < array2D.length; column++) {
 
-                //System.out.print(Arrays.toString(new int[]{linha, coluna}));
-                if (array2D[linha][coluna] != 0) {
+                //System.out.print(Arrays.toString(new int[]{row, column}));
+                if (array2D[row][column] != 0) {
 
                     // Count the distance from the current position to the left
-                    for (int posicaoColuna = coluna; posicaoColuna >= 0; posicaoColuna--) {
-                        if (array2D[linha][posicaoColuna] == 0) {
+                    for (int positionColumn = column; positionColumn >= 0; positionColumn--) {
+                        if (array2D[row][positionColumn] == 0) {
                             listDistanceDirections.add(count);
                             break;
                         } else {
@@ -39,8 +39,8 @@ public class WaterVolume {
 
                     count = 0;
                     // Count the distance from the current position to the right
-                    for (int posicaoColuna = coluna; posicaoColuna <= array2D.length - 1; posicaoColuna++) {
-                        if (array2D[linha][posicaoColuna] == 0) {
+                    for (int positionColumn = column; positionColumn <= array2D.length - 1; positionColumn++) {
+                        if (array2D[row][positionColumn] == 0) {
                             listDistanceDirections.add(count);
                             break;
                         } else {
@@ -50,8 +50,8 @@ public class WaterVolume {
 
                     count = 0;
                     // Count the distance from the current position to the top
-                    for (int posicaoLinha = linha; posicaoLinha >= 0; posicaoLinha--) {
-                        if (array2D[posicaoLinha][coluna] == 0) {
+                    for (int positionRow = row; positionRow >= 0; positionRow--) {
+                        if (array2D[positionRow][column] == 0) {
                             listDistanceDirections.add(count);
                             break;
                         } else {
@@ -63,8 +63,8 @@ public class WaterVolume {
 
                     count = 0;
                     // Count the distance from the current position to the bottom
-                    for (int posicaoLinha = linha; posicaoLinha <= array2D.length - 1; posicaoLinha++) {
-                        if (array2D[posicaoLinha][coluna] == 0) {
+                    for (int positionRow = row; positionRow <= array2D.length - 1; positionRow++) {
+                        if (array2D[positionRow][column] == 0) {
                             listDistanceDirections.add(count);
                             break;
                         } else {
@@ -76,36 +76,36 @@ public class WaterVolume {
                     //An exception if array not having a distance close to 0
                     if (listDistanceDirections.isEmpty()) {
                         count = 0;
-                        // contar a distancia da posicao atual para a esquerda
-                        for (int posicaoColuna = coluna; posicaoColuna >= 0; posicaoColuna--) {
-                            if (array2D[linha][posicaoColuna] == 1) {
+                        // Count the distance from the current position to the left
+                        for (int positionColumn = column; positionColumn >= 0; positionColumn--) {
+                            if (array2D[row][positionColumn] == 1) {
                                 count++;
                             }
 
                         }
                         listDistanceDirections.add(count);
                         count = 0;
-                        // contar a distancia da posicao atual para a direita
-                        for (int posicaoColuna = coluna; posicaoColuna <= array2D.length - 1; posicaoColuna++) {
-                            if (array2D[linha][posicaoColuna] == 1) {
+                        // Count the distance from the current position to the right
+                        for (int positionColumn = column; positionColumn <= array2D.length - 1; positionColumn++) {
+                            if (array2D[row][positionColumn] == 1) {
                                 count++;
                             }
 
                         }
                         listDistanceDirections.add(count);
                         count = 0;
-                        // contar a distancia da posicao atual para a cima
-                        for (int posicaoLinha = linha; posicaoLinha >= 0; posicaoLinha--) {
-                            if (array2D[posicaoLinha][coluna] == 1) {
+                        // Count the distance from the current position to the top
+                        for (int positionRow = row; positionRow >= 0; positionRow--) {
+                            if (array2D[positionRow][column] == 1) {
                                 count++;
                             }
 
                         }
                         listDistanceDirections.add(count);
                         count = 0;
-                        // contar a distancia da posicao atual para a baixo
-                        for (int posicaoLinha = linha; posicaoLinha <= array2D.length - 1; posicaoLinha++) {
-                            if (array2D[posicaoLinha][coluna] == 1) {
+                        // Count the distance from the current position to the bottom
+                        for (int positionRow = row; positionRow <= array2D.length - 1; positionRow++) {
+                            if (array2D[positionRow][column] == 1) {
                                 count++;
                             }
 
