@@ -35,9 +35,9 @@ public class WaterVolumeMain {
                 };
 
 
-        System.out.println("Volume: " + WaterVolume.waterVolumeCalc(sample1));
-        System.out.println("Volume: " + WaterVolume.waterVolumeCalc(sample2));
-        System.out.println("Volume: " + WaterVolume.waterVolumeCalc(sample3));
+        System.out.println("Volume: " + WaterVolume2.solution(sample1));
+        System.out.println("Volume: " + WaterVolume2.solution(sample2));
+        System.out.println("Volume: " + WaterVolume2.solution(sample3));
 
 
     }
